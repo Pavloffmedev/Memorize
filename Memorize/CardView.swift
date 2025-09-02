@@ -10,6 +10,7 @@ import SwiftUI
 struct CardView: View {
     
     @State var isFaceUp = false
+    let content: String
     
     var body: some View {
         ZStack {
@@ -20,7 +21,7 @@ struct CardView: View {
                 base
                     .strokeBorder(style: StrokeStyle(lineWidth: 2, dash: [10, 2]))
                 
-                Text("💩")
+                Text(content)
                     .font(.largeTitle)
             } else {
                 base
@@ -37,9 +38,9 @@ struct CardView: View {
 }
 
 #Preview {
-    CardView(isFaceUp: true)
+    CardView(isFaceUp: true, content: "🤖")
 }
 
 #Preview {
-    CardView(isFaceUp: false)
+    CardView(isFaceUp: false, content: "😵‍💫")
 }

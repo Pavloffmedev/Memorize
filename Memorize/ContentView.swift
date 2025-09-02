@@ -8,15 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    let emojies = ["🎁", "🏆", "⭐️", "🍊", "🤖"]
+    
     var body: some View {
         HStack {
-            CardView(isFaceUp: true)
-            CardView()
-            CardView()
-            
-            CardView()
-            CardView()
-            
+            ForEach(emojies.indices, id: \.self) {index in
+                CardView(content: emojies[index])
+            }
         }
     }
 }
